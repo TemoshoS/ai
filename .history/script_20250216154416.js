@@ -22,7 +22,7 @@ document.getElementById("sendChat").addEventListener("click", function () {
     userMessage.innerText = "You: " + userInput;
     chatBody.appendChild(userMessage);
     
-    document.getElementById("chatInput").value = "";
+    document.getElementById("chatInput").value = ""; // Clear input field
     
     // Simulate AI response
     setTimeout(() => {

@@ -22,7 +22,7 @@ document.getElementById("sendChat").addEventListener("click", function () {
     userMessage.innerText = "You: " + userInput;
     chatBody.appendChild(userMessage);
     
-    document.getElementById("chatInput").value = "";
+    document.getElementById("chatInput").value = ""; // Clear input field
     
     // Simulate AI response
     setTimeout(() => {
@@ -42,6 +42,6 @@ document.getElementById("sendChat").addEventListener("click", function () {
         aiMessage.innerText = "AI: " + randomResponse;
         chatBody.appendChild(aiMessage);
         
-        chatBody.scrollTop = chatBody.scrollHeight; 
+        chatBody.scrollTop = chatBody.scrollHeight; // Auto-scroll to the latest message
     }, 1500);
 });
