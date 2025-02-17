@@ -1,9 +1,16 @@
-body {
-    font-family: Arial, sans-serif;
+/* GLOBAL STYLES */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body takes up full height */
     background-color: #f4f4f4;
-    text-align: center;
 }
 
 /* NAVIGATION BAR */
@@ -69,7 +76,53 @@ section {
     margin-top: 20px;
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    flex-grow: 1; /* Ensures sections take remaining space */
 }
+.slider-container {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slide {
+    display: none;
+    text-align: center;
+    padding: 20px;
+}
+
+.slide.active {
+    display: block;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #20C997;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#prevBtn {
+    left: 10px;
+}
+
+#nextBtn {
+    right: 10px;
+}
+
+button:hover {
+    background-color: #17a589;
+}
+
 
 /* AI CHAT */
 input {
@@ -100,6 +153,7 @@ button:hover {
     color: #333;
     margin-top: 15px;
 }
+
 /* Chat Icon */
 #chatIcon {
     position: fixed;
@@ -174,11 +228,33 @@ button:hover {
     border-radius: 5px;
 }
 
-
 /* FOOTER */
 footer {
-    margin-top: 20px;
     background-color: #333;
     color: white;
     padding: 10px;
+    text-align: center;
+    margin-top: auto; /* Ensures the footer is at the bottom */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    #chatBox {
+        width: 80%;
+        right: 10px;
+        bottom: 70px;
+    }
+
+    #chatInput {
+        width: 70%;
+    }
 }
